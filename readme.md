@@ -1,6 +1,6 @@
 # Beneš & Michl Frontend devstack
 
-Frontend devstack is the basis of every Beneš & Michl web agency project. This repository is used for frontend developers. This devstack is a public repository. Your project based on this devstack must be private.
+Frontend devstack is the basis of every Beneš & Michl web agency project. This repository is used by frontend developers. This devstack is a public repository. Your project based on this devstack must be private.
 
 ## Used technologies
 
@@ -10,15 +10,16 @@ Frontend devstack is the basis of every Beneš & Michl web agency project. This 
 
 ## Our philosophy
 
-- If a component already exists in Bootstrap 5, we don't make it from scratch, we modify the existing component. (https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- If a component already exists in Bootstrap 5, we don't create it from scratch, we modify the existing component. (https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - For creating custom components we respect the BEM method (http://getbem.com/introduction/)
 - Every website is responsive. We respect the 'mobile first' method from the base of Boostrap 5.
 - We use SVG format for all icons. We never use webfont.
 - HTML and CSS are indented by 4 spaces. The .editorconfig file is used for this purpose.
 - All pages are 100% valid (https://validator.w3.org/).
-    Errors/warnings caused by external code (e.g. iframes with Google map etc.) are fine.
-- Class names are not renamed "banner", "adv", "b4n3r", etc. Adblock may then evaluate them as advertising and hide them.
+    Errors/warnings caused by external code (e.g. iframes with Google map etc.) are allowed.
+- We don't use words like "banner", "adv", "b4n3r" to name CSS classes. Adblock may then recognize them as advertising and hide them.
 - Links pointing outside the web (e.g. social network icons) are directed to a new window.
+- We use English to name the classes, ids, methods, etc.
 
 
 ## Browsers and devices
@@ -32,7 +33,7 @@ We only support the latest stable browser versions.
 - All content on the page must be accessible without using JavaScript.
 - Each page contains just one H1 heading.
 - All text is converted from graphic design to text.
-- We do not switch the order of H1, H2, H3... (https://gsnedders.html5.org/outliner/)
+- We keep headings in the right order (H1, H2, H3...). (https://gsnedders.html5.org/outliner/)
 
 
 ## File structure
@@ -69,7 +70,7 @@ The ``package.json`` file contains some dependencies that you don't need. They a
 Run the command ``npm front:build:dev``.
 
 ### Watch
-Command ``npm front:build:dev`` will automatically start tracking your .js and .scss files. This command will automatically start tracking your .js and .scss files. When the file is changed, it will start compiling to the 'dist' folder.
+Command ``npm front:build:dev`` will automatically start tracking your .js and .scss files. When the file is changed, it will start compiling to the 'dist' folder.
 
 ### Live Reload
 Command ``npm front:build:dev`` automatically starts a 'live reload' on port 35729. There is javascript code at the end of the index.html file. If you do not want to use 'live reload', remove this code from index.html.
@@ -79,7 +80,7 @@ Run the command ``npm front:build:prod``. This command compiles CSS and JS and m
 
 ## SVG Icons
 
-Very often icons need to be colored using CSS, so we use one of the following variants
+It often happens that we need to be able to change the color of the icon by CSS, so we use one of the following variants:
 
 ### SVG Symbol / Use (recommended variant)
 All icons from folder ``front/icons`` are automatically converted to SVG sprite ``/images/icons.svg``.
@@ -90,7 +91,10 @@ Example of using Instagram icon in code:
     <use xlink:href="../images/icons.svg#instagram"></use>
 </svg>
 ```
-
+We can change the color of this icon by writing CSS:
+```
+.icon {fill: #000000;}
+```
 ### Inline SVG
 
 Example of using icon in code:
