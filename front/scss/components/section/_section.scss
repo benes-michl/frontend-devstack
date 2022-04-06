@@ -1,0 +1,208 @@
+.section:first-child {
+    margin-top: $section-margin-y-sm;
+
+    @include mq($from: md) {
+        @include margin-top($section-margin-y);
+    }
+}
+
+.section:last-child {
+    margin-bottom: $section-margin-y-sm;
+
+    @include mq($from: md) {
+        @include margin-bottom($section-margin-y);
+    }
+}
+
+.section--bg + .section--default,
+.section--default + .section--bg,
+.section--default + .section--bg-md {
+    margin-top: $section-margin-y-sm;
+
+    @include mq($from: md) {
+        @include margin-top($section-margin-y);
+    }
+}
+
+.section--default + .section--bg-md {
+    @include mq($until: md) {
+        margin-top: 0;
+    }
+}
+
+.section--padding {
+    padding-top: $section-margin-y-sm;
+    padding-bottom: $section-margin-y-sm;
+
+    @include mq($from: md) {
+        @include padding-top($section-margin-y);
+        @include padding-bottom($section-margin-y);
+    }
+}
+
+.section--dark {
+    color: #fff;
+
+    a {
+        color: #fff;
+    }
+
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4 {
+        color: inherit;
+    }
+}
+
+.section--rules {
+    .section__content,
+    .container {
+        > *:first-child,
+        > [class*="container"]:first-child > *:first-child {
+            margin-top: 0;
+        }
+
+        > *:last-child,
+        > [class*="container"]:last-child > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.section--bg-color {
+    background-color: $light;
+    @extend .section--padding;
+    @extend .section--rules;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.section--primary {
+    @extend .section--bg-color;
+}
+
+.section--img {
+    max-width: 1920px;
+    margin-right: auto;
+    margin-left: auto;
+
+    & > .container {
+        max-width: none;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .row {
+        align-items: center;
+
+        @include mq($from: md) {
+            margin-bottom: 0;
+        }
+    }
+
+    .col-img {
+        padding-right: 0;
+        padding-left: 0;
+
+        p {
+            margin: 0;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .col-content {
+        padding-right: $container-padding;
+        padding-left: $container-padding;
+
+        @include mq($from: md) {
+            padding-left: 0;
+        }
+    }
+
+    .col-content-left {
+        @include mq($from: md) {
+            padding-right: 0;
+            padding-left: $container-padding;
+        }
+    }
+
+    .section__content {
+        @include mq($from: md) {
+            padding: 0 0 0 50px;
+
+            & > *:last-child {
+                margin-bottom: 0;
+            }
+
+            & > *:first-child,
+            & > div > *:first-child {
+                margin-top: 0;
+            }
+        }
+
+        @include mq($from: lg) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        h2,
+        .h2 {
+            margin-bottom: 1em;
+        }
+    }
+
+    .col-content-left .section__content {
+        @include mq($from: md) {
+            padding-right: 50px;
+            padding-left: 0;
+            margin-left: auto;
+        }
+    }
+}
+
+.section--bg-img {
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.section--cta {
+    & > .container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        @include mq($from: md) {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        @include mq($from: lg) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        @include mq($from: xl) {
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+        }
+    }
+}

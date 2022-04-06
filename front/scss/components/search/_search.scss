@@ -1,0 +1,12 @@
+.search {
+    position: absolute;
+    top: 0;
+    right: 120px;
+    z-index: 10;
+    margin: .25rem 0 0 0;
+
+    form {
+        @include clearfix();
+        position: relative;
+    }
+}

@@ -1,0 +1,19 @@
+.list-circle {
+    @include list-unstyled();
+
+    li {
+        position: relative;
+        padding-left: 1rem;
+
+        &::before {
+            position: absolute;
+            top: .55em;
+            left: 0;
+            width: 6px;
+            height: 6px;
+            content: "";
+            background: $primary;
+            border-radius: 50%;
+        }
+    }
+}

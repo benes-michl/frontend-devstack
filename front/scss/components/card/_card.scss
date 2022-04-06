@@ -1,0 +1,56 @@
+.card-grid {
+    & > .col {
+        margin-bottom: $spacer;
+
+        @include mq($from: sm) {
+            margin-bottom: $spacer * 2;
+        }
+    }
+
+    .card {
+        height: 100%;
+    }
+}
+
+.card-body {
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.card-title {
+    margin-top: 0;
+}
+
+.card-meta {
+    margin-bottom: 1rem;
+
+    & + .card-title {
+        margin-top: 1rem;
+    }
+}
+
+.card-masonry {
+    .card {
+        margin-bottom: $spacer;
+
+        @include mq($from: sm) {
+            margin-bottom: $spacer * 2;
+        }
+    }
+}
+
+.card-horizontal {
+    & > .col {
+        margin-bottom: $spacer;
+
+        @include mq($from: lg) {
+            margin-bottom: $spacer * 2;
+        }
+    }
+
+    .card,
+    .card > .row {
+        height: 100%;
+    }
+}

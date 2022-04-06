@@ -1,0 +1,12 @@
+.gallery__item {
+    margin-bottom: $grid-gutter-width;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.gallery__link {
+    display: block;
+}

@@ -1,0 +1,29 @@
+.top {
+    background: $nav-top-bg;
+}
+
+.top__nav {
+    display: none;
+
+    @include mq($from: lg) {
+        display: block;
+
+        .navbar {
+            display: flex;
+            padding: .25rem 0;
+        }
+
+        .navbar-nav {
+            flex-direction: row;
+            margin-left: auto;
+        }
+
+        .nav-link {
+            display: block;
+            padding-right: $navbar-nav-link-padding-x;
+            padding-left: $navbar-nav-link-padding-x;
+            font-size: $font-size-sm;
+            color: $white;
+        }
+    }
+}

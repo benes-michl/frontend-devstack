@@ -1,0 +1,26 @@
+.icon {
+    position: relative;
+    top: -.0625em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+.icon-feature {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    color: $primary;
+
+    @include mq($from: md) {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    @include mq($from: lg) {
+        width: 6rem;
+        height: 6rem;
+    }
+}

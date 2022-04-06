@@ -1,0 +1,41 @@
+.links {
+    @include list-unstyled();
+
+    li {
+        margin-bottom: $grid-gutter-width/2;
+        background: $white;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: $spacer;
+        color: $body-color;
+        text-decoration: none;
+        border: $border-width solid $border-color;
+
+        @if $enable-rounded {
+            border-radius: $border-radius;
+        } @else {
+            border-radius: 0;
+        }
+
+        &:hover {
+            color: $primary;
+            border-color: $primary;
+        }
+    }
+
+    .icon {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: .5rem;
+    }
+
+    .icon-big {
+        width: 5rem;
+        height: 5rem;
+    }
+}

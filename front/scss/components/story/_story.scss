@@ -1,0 +1,54 @@
+.story {
+    width: 100%;
+    margin-bottom: 2.5rem;
+
+    @include mq($from: md) {
+        display: flex;
+    }
+}
+
+.story__img {
+    max-width: 200px;
+    margin-bottom: 20px;
+
+    @include mq($from: md) {
+        flex: 0 0 35%;
+        max-width: 35%;
+        padding-right: 35px;
+        margin-bottom: 0;
+        border-right: 1px solid $gray-500;
+    }
+
+    @include mq($from: md) {
+        flex: 0 0 300px;
+        max-width: 300px;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.story__content {
+    @include mq($from: md) {
+        padding-left: 35px;
+    }
+}
+
+.story__text {
+    position: relative;
+    margin: 0 0 1.5rem 0;
+    font-size: $font-size-lg;
+}
+
+.story__author {
+    font-size: $font-size-base;
+    color: $dark;
+}
+
+.story__link {
+    margin-top: 2rem;
+}
+

@@ -1,0 +1,42 @@
+.nav-tabs {
+    .nav-link {
+        margin-right: -1px;
+        font-size: $font-size-base;
+        background-color: $light;
+        border-color: $nav-tabs-border-color;
+        transition: background-color .3s;
+
+        @include mq($from: lg) {
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
+
+        &:not(.active):hover {
+            background-color: lighten($primary, 50%);
+        }
+    }
+}
+
+.tab-pane {
+    padding: 1rem;
+    margin-top: -1px;
+    border-color: $nav-tabs-border-color;
+    border-style: solid;
+    border-width: $nav-tabs-border-width;
+
+    @include mq($from: lg) {
+        padding: 2rem;
+    }
+}
+
+.select-tabs {
+    max-width: 240px;
+    font-weight: 700;
+    color: $primary;
+    background-color: $light;
+    border-color: $primary;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}

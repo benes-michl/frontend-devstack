@@ -1,0 +1,40 @@
+.download {
+    @include list-unstyled();
+    border-top: 1px solid $border-color;
+
+    li {
+        position: relative;
+        padding: 1.125rem 3rem 1.125rem .5rem;
+        border-bottom: 1px solid $border-color;
+    }
+
+    a {
+        display: block;
+    }
+
+    .icon {
+        position: absolute;
+        top: .875rem;
+        right: .5rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    @include mq($from: sm) {
+        li {
+            padding: 1.125rem 4.5rem 1.125rem .5rem;
+        }
+
+        .icon {
+            right: 2rem;
+        }
+    }
+}
+
+.download__meta {
+    display: block;
+
+    @include mq($from: sm) {
+        display: inline;
+    }
+}

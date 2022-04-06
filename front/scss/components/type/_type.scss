@@ -1,0 +1,139 @@
+h1,
+.h1 {
+    margin: 0 0 .67em 0;
+    font-size: $h1-font-size * .667;
+    line-height: 1.2;
+    color: $primary;
+
+    @include mq($from: md) {
+        @include font-size($h1-font-size);
+    }
+}
+
+h2,
+.h2 {
+    margin: 1.5em 0 1em 0;
+    font-size: $h2-font-size * .75;
+    line-height: 1.333;
+
+    * + & {
+        margin-top: 2.25em;
+    }
+
+    @include mq($from: md) {
+        @include font-size($h2-font-size);
+    }
+}
+
+h3,
+.h3 {
+    margin: 1.5em 0 1.25em 0;
+    font-size: $h3-font-size * .833;
+
+    * + & {
+        margin-top: 1.5em;
+    }
+
+    @include mq($from: md) {
+        @include font-size($h3-font-size);
+    }
+}
+
+h4,
+.h4 {
+    margin: 1em 0 .5em 0;
+    font-size: $h4-font-size * .9;
+
+    * + & {
+        margin-top: 1em;
+    }
+
+    @include mq($from: md) {
+        font-size: $h4-font-size;
+    }
+}
+
+h5,
+.h5 {
+    font-size: $h5-font-size * .944;
+
+    @include mq($from: md) {
+        font-size: $h5-font-size;
+    }
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+.fw-semi {
+    font-weight: 600;
+}
+
+.text-underline {
+    text-decoration: underline !important; // stylelint-disable-line declaration-no-important
+}
+
+.lead {
+    max-width: $lead-width;
+}
+
+.display-1 {
+    font-size: $display1-size * .5;
+
+    @include mq($from: md) {
+        font-size: $display1-size * .625;
+    }
+
+    @include mq($from: lg) {
+        font-size: $display1-size * .75;
+    }
+
+    @include mq($from: xl) {
+        font-size: $display1-size;
+    }
+}
+
+.display-2 {
+    font-size: $display2-size * .625;
+
+    @include mq($from: md) {
+        font-size: $display2-size * .75;
+    }
+
+    @include mq($from: lg) {
+        font-size: $display2-size;
+    }
+}
+
+.display-3 {
+    font-size: $display3-size * .625;
+
+    @include mq($from: md) {
+        font-size: $display3-size * .75;
+    }
+
+    @include mq($from: lg) {
+        font-size: $display3-size;
+    }
+}
+
+.display-4 {
+    font-size: $display4-size * .8;
+
+    @include mq($from: md) {
+        font-size: $display4-size * .9;
+    }
+
+    @include mq($from: lg) {
+        font-size: $display4-size;
+    }
+}
+
+.line-height-sm {
+    line-height: $line-height-base * .9 !important; // stylelint-disable-line
+}
+
+.line-height-base {
+    line-height: $line-height-base;
+}

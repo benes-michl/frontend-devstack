@@ -1,0 +1,54 @@
+.navbar-toggler {
+    margin-left: 1rem;
+    background: transparent !important; // stylelint-disable-line declaration-no-important
+    border: none;
+    outline: 0;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:hover {
+        background: transparent !important; // stylelint-disable-line declaration-no-important
+    }
+
+    .icon-bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: $primary;
+        transition: all .2s;
+    }
+
+    .icon-bar + .icon-bar {
+        margin-top: 4px;
+    }
+
+    .icon-bar:nth-of-type(1) {
+        transform: rotate(45deg);
+        transform-origin: 10% 10%;
+    }
+
+    .icon-bar:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    .icon-bar:nth-of-type(3) {
+        transform: rotate(-45deg);
+        transform-origin: 10% 90%;
+    }
+
+    &.collapsed {
+        .icon-bar:nth-of-type(1) {
+            transform: rotate(0);
+        }
+
+        .icon-bar:nth-of-type(2) {
+            opacity: 1;
+        }
+
+        .icon-bar:nth-of-type(3) {
+            transform: rotate(0);
+        }
+    }
+}

@@ -1,0 +1,29 @@
+$max-list-size: 6;
+$listgutter: $grid-gutter-width;
+
+@mixin list-n($size) {
+    li {
+        flex: 0 0 percentage(1/$size);
+        max-width: percentage(1/$size);
+        padding-right: $listgutter / 2;
+        padding-left: $listgutter / 2;
+        margin-bottom: $listgutter;
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        @for $i from 2 through $max-list-size {
+            .list#{$infix}-#{$i} {
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: -$listgutter / 2;
+                margin-left: -$listgutter / 2;
+
+                @include list-n($i);
+            }
+        }
+    }
+}

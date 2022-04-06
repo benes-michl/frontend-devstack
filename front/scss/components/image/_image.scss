@@ -1,0 +1,60 @@
+.image--video {
+    position: relative;
+    display: block;
+    padding: 0;
+    border-radius: 0;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        content: "";
+        background: #fff;
+        border-radius: 50%;
+        opacity: .8;
+        transition: opacity .3s;
+        transform: translate(-50%, -50%);
+    }
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        content: "";
+        border-color: transparent transparent transparent #000;
+        border-style: solid;
+        border-width: 10px 0 10px 20px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+a.image--video:hover { // stylelint-disable-line
+    &::before {
+        opacity: 1;
+    }
+}
+
+.image--rounded {
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.image--square {
+    position: relative;
+    padding-bottom: 100%;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        max-width: none;
+        height: 100%;
+        object-fit: cover;
+        transform: translateX(-50%);
+    }
+}

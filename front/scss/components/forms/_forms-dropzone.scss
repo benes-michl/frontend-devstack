@@ -1,0 +1,65 @@
+.dropzone {
+    min-height: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.dropzone .dz-preview.dz-image-preview {
+    background: transparent;
+}
+
+.dz-remove {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 30;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    line-height: 28px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #c00;
+    border-radius: 15px;
+
+    &:hover {
+        color: #fff;
+        text-decoration: none !important;   // stylelint-disable-line declaration-no-important
+        background-color: $primary;
+    }
+}
+
+.dz-error-mark {
+    background: url("./../images/default/error.svg") no-repeat center;
+    background-size: 54px 54px;
+
+    svg {
+        visibility: hidden;
+    }
+}
+
+.dz-clickable {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: $light;
+    border: 1px dashed $border-color;
+    border-radius: $border-radius;
+    transition: background-color .3s;
+
+    &.dz-drag-hover {
+        background-color: darken($light, 10%);
+    }
+}
+
+.dropzone__btn {
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+        color: $primary;
+    }
+}

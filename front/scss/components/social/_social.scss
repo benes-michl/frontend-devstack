@@ -1,0 +1,37 @@
+.social {
+    display: inline-flex;
+    padding: 0;
+    margin: 0 -3px;
+    list-style: none;
+
+    li {
+        margin: 0 3px;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        color: #fff;
+        background: $primary;
+        border-radius: 50%;
+        transition: background 300ms;
+
+        &:hover {
+            background: lighten($primary, 10%);
+        }
+    }
+
+    .icon {
+        top: auto;
+        width: auto;
+        height: 14px;
+    }
+
+    .icon-youtube {
+        height: 12px;
+        transform: translateX(1px);
+    }
+}

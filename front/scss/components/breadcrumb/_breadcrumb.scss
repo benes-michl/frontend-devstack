@@ -1,0 +1,55 @@
+.breadcrumb {
+    @include container();
+    align-items: baseline;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: $breadcrumb-font-size;
+    background: transparent;
+
+    @include mq($from: 320px) {
+        padding-right: $container-padding;
+        padding-left: $container-padding;
+    }
+}
+
+.breadcrumb-item {
+    a {
+        color: $breadcrumb-color;
+
+        &:hover {
+            color: $breadcrumb-hover-color;
+        }
+    }
+}
+
+.breadcrumb-item.active {
+    color: $breadcrumb-active-color;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    width: 6px;
+    height: 16px;
+    padding: 0;
+    margin: .1rem .45rem 0 0;
+    vertical-align: middle;
+    content: "";
+    background: url("../images/crumb.svg") no-repeat 50% 50%;
+}
+
+@include mq($until: md) {
+    .breadcrumb .breadcrumb-item {
+        display: none;
+    }
+
+    .breadcrumb .breadcrumb-item:nth-last-child(2) {
+        display: list-item;
+
+        &::before {
+            margin: 0 $breadcrumb-spacer 0 0;
+            transform: rotate(180deg);
+        }
+    }
+}

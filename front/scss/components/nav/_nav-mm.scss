@@ -1,0 +1,86 @@
+.nav-mmenu {
+    display: none;
+
+    .mm-ocd & {
+        @include mq($until: lg) {
+            display: block;
+        }
+    }
+}
+
+.mm {
+    color: $black;
+    background: #f3f3f3;
+}
+
+.mm .nav-link {
+    padding-left: 15px;
+}
+
+.mm a > span {
+    padding: 0;
+}
+
+.mm::after {
+    font-weight: 600;
+    color: #fff;
+    background: $primary;
+    opacity: 1;
+}
+
+.mm::before {
+    z-index: 1;
+    border-color: #fff;
+    opacity: 1;
+}
+
+.mm li::after {
+    margin-left: 0;
+}
+
+
+.mm-blocker.mm--right.mm--open {
+    &::after {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 51px;
+        height: 50px;
+        font-size: 1.75rem;
+        font-weight: 500;
+        line-height: 50px;
+        color: #fff;
+        text-align: center;
+        content: "\00d7";
+    }
+}
+
+.mm-spn.mm-spn--navbar .close {
+    position: relative;
+    z-index: 5;
+    opacity: 1;
+}
+
+.mm-spn.mm-spn--navbar .close::after {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 51px;
+    height: 50px;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 50px;
+    color: $black;
+    text-align: center;
+    content: "\00d7";
+}
+
+.mm-spn.mm-spn--navbar.mm-spn--main::after {
+    opacity: 0;
+}
+
+.mm-spn li::after,
+.mm-spn.mm-spn--navbar ul::before {
+    opacity: 0;
+}

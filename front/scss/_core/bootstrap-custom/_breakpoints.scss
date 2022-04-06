@@ -1,0 +1,47 @@
+// Revert SASS Map - Grid breakpoints => MQ breakpoints conversion
+@function mapreverse ($map) {
+    $result: null;
+    @if type-of($map) == "map" {
+        $keys: map-keys($map);
+        $map-reversed: ();
+        @for $i from length($keys) through 1 {
+            $map-reversed: map-merge($map-reversed, (nth($keys, $i): map-get($map, nth($keys, $i))));
+        }
+        @if type-of($map-reversed) == "map" {
+            $result: $map-reversed;
+        } @else {
+            @warn 'There was an error reversing the order of "#{$map}"';
+        }
+    } @else {
+        @warn '"#{$map}" is not a valid map';
+    }
+    @return $result;
+}
+
+$mq-breakpoints: mapreverse($grid-breakpoints);
+$mq-show-breakpoints: (sm, md, lg, xl);
+
+// override default bootstrap mediaquery with MQ SCSS
+// https://github.com/sass-mq/sass-mq
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @include mq($from: $name) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+    @if $max {
+        @include mq($until: $name) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

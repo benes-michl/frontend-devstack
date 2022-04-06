@@ -1,0 +1,114 @@
+.usp {
+    &__list {
+        counter-reset: usp;
+        @include margin-top(130px);
+    }
+    &__item {
+        position: relative;
+        max-width: 530px;
+        padding-bottom: 30px;
+        padding-left: 35px;
+        transition: all .5s;
+
+        @include mq($from: md) {
+            @include padding-bottom(56px);
+            padding-left: 50px;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+            opacity: .5;
+        }
+
+        p {
+            opacity: .5;
+        }
+
+        &::before {
+            position: absolute;
+            top: -18px;
+            left: 0;
+            z-index: 1;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1rem;
+            color: rgba($primary, .5);
+            content: "0" counters(usp, ".") " ";
+            counter-increment: usp;
+            background: $white;
+
+            @include mq($from: lg) {
+                top: -15px;
+            }
+        }
+
+        &:not(:last-child) {
+            padding-bottom: 15px;
+            @include mq($from: md) {
+                @include padding-bottom(131px);
+            }
+
+            &::after {
+                position: absolute;
+                top: 30px;
+                left: 8px;
+                width: 0;
+                height: 100%;
+                content: "";
+                border-right: 1px solid $border-color;
+                opacity: .5;
+            }
+        }
+
+        &.active {
+            transition: all .5s;
+
+            h3,
+            p,
+            &::after {
+                opacity: 1;
+            }
+
+            &::before {
+                color: $primary;
+            }
+        }
+    }
+
+    &__images {
+        position: sticky;
+        top: 80px;
+
+        @include mq($from: xl) {
+            top: 150px;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        height: 0;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        border-radius: 20px 0 0 20px;
+        opacity: 0;
+        transition: all .25s;
+
+        @include mq($from: xl) {
+            border-radius: 40px 0 0 40px;
+        }
+
+        &.active {
+            opacity: 1;
+            transition: all .25s;
+        }
+    }
+
+    &__imgCol {
+        margin-bottom: 250px;
+
+        @include mq($from: md) {
+            margin-bottom: calc((100vw / 2) * .56 - 15px);
+        }
+    }
+}

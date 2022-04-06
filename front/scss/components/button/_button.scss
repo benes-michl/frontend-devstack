@@ -1,0 +1,21 @@
+.btn {
+    text-decoration: none;
+}
+
+.btn-white {
+    color: $primary;
+}
+
+.btn-icon {
+    .icon {
+        margin-right: 8px;
+        margin-left: -4px;
+    }
+}
+
+.btn-icon-end {
+    .icon {
+        margin-right: -4px;
+        margin-left: 8px;
+    }
+}

@@ -1,0 +1,100 @@
+.pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 0;
+
+    .page-item {
+        margin: $pagination-spacing;
+
+        .page-link {
+            font-size: $pagination-font-size;
+            font-weight: $pagination-font-weight;
+            text-decoration: none;
+            border-color: $pagination-border-color;
+
+            @if $enable-rounded {
+                border-radius: $border-radius;
+            } @else {
+                border-radius: 0;
+            }
+        }
+    }
+
+    .page-item:first-child,
+    .page-item:last-child {
+        .page-link {
+            position: relative;
+            padding: $pagination-padding-y-lg $pagination-padding-x-lg;
+            color: $pagination-active-color;
+            background-color: $pagination-active-bg;
+            transition: background-color .2s;
+
+            @if $enable-rounded {
+                border-radius: $border-radius;
+            } @else {
+                border-radius: 0;
+            }
+
+            &:hover {
+                background-color: darken($pagination-active-bg, 10%);
+            }
+        }
+    }
+
+    .page-item:first-child {
+        margin-right: $pagination-spacing*6;
+    }
+
+    .page-item:last-child {
+        margin-left: $pagination-spacing*6;
+    }
+
+    .page-item.disabled  {
+        .page-link {
+            color: $pagination-disabled-color;
+            background-color: $pagination-disabled-bg;
+        }
+    }
+
+    .page-item.active {
+        margin: $pagination-spacing $pagination-spacing*2;
+    }
+}
+
+.nav-pagination {
+    @include mq($from: md) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+.nav-pagination--ajax {
+    @include mq($from: md) {
+        display: block;
+    }
+
+    .pagination {
+        justify-content: flex-end;
+
+        .page-link {
+            font-size: $font-size-sm;
+        }
+    }
+
+    .pagination--ajax {
+        justify-content: center;
+        margin-bottom: 1em;
+        font-size: $font-size-base;
+
+        .page-link {
+            font-size: $font-size-base;
+        }
+
+        .page-item {
+            margin: 0 !important;   // stylelint-disable-line declaration-no-important
+        }
+    }
+}
+

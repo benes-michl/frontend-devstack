@@ -1,0 +1,78 @@
+main,
+body {
+    //@include clearfix();
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.container {
+    @include container();
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include mq($from: 320px) {
+        padding-right: $container-padding;
+        padding-left: $container-padding;
+    }
+}
+
+.row-lg {
+    @include mq($from: md) {
+        @include margin(0 -50px);
+    }
+
+    > *[class*="col"] {
+        @include mq($from: md) {
+            @include padding(0 50px);
+        }
+    }
+}
+
+@mixin grid-rules($mq) {
+    .row > *[class*="col-#{$mq}"] {
+        h2,
+        h3,
+        h4,
+        h5 {
+            &:first-child {
+                @include mq($from: $mq) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+@include grid-rules(sm);
+@include grid-rules(md);
+@include grid-rules(lg);
+@include grid-rules(xl);
+
+.layout-padding-left {
+    padding-left: 15px;
+
+    @include mq($from: 320px) {
+        padding-left: $container-padding;
+    }
+
+    @media only screen and (min-width: $rfs-breakpoint) {
+        padding-left: calc(#{$container-padding} + ( ( 100vw - ( #{$container-width} + ( #{$container-padding} * 2 ) ) ) / 2 ));
+    }
+}
+
+.layout-padding-right {
+    padding-right: 15px;
+
+    @include mq($from: 320px) {
+        padding-right: $container-padding;
+    }
+
+    @media only screen and (min-width: $rfs-breakpoint) {
+        padding-right: calc(#{$container-padding} + ((100vw - (#{$container-width} + (#{$container-padding} * 2))) / 2));
+    }
+}

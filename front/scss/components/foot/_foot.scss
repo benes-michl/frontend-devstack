@@ -1,0 +1,141 @@
+.foot {
+    padding-top: 2rem;
+    color: $foot-color;
+    background-color: $foot-bg;
+
+    footer {
+        @include container();
+        padding: 0 15px;
+        margin-right: auto;
+        margin-left: auto;
+
+        @include mq($from: 320px) {
+            padding-right: $container-padding;
+            padding-left: $container-padding;
+        }
+    }
+}
+
+.foot__brand {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.foot__nav {
+    font-size: .875rem;
+
+    h3 {
+        margin: 0 0 .875rem 0;
+        font-size: 1rem;
+        color: $primary;
+    }
+
+    ul {
+        @include list-unstyled();
+    }
+
+    li {
+        margin-bottom: .25rem;
+    }
+
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.foot__social {
+    margin-bottom: 1.5rem;
+    ul {
+        @include list-unstyled();
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+.foot__claim {
+    font-size: 1.5rem;
+}
+
+.foot__contact {
+    position: relative;
+    padding: 1.25rem 1.25rem 1.25rem 110px;
+    margin: 0 0 1.5rem 0;
+    background: #f6f6f6;
+    border-radius: $border-radius;
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        width: 60px;
+        height: 60px;
+        padding: 15px;
+        background-color: $white;
+        border-radius: 50%;
+        transform: translateY(-50%);
+    }
+
+    p:last-child {
+        margin: 0;
+    }
+}
+
+.foot--1 {
+    .foot__main {
+        display: flex;
+
+        @include mq($from: md) {
+            flex-flow: column;
+            height: 100%;
+        }
+    }
+
+    .foot__social {
+        margin-left: auto;
+
+        @include mq($from: md) {
+            margin-top: auto;
+            margin-bottom: 0;
+            margin-left: 0;
+        }
+    }
+}
+
+.foot--2,
+.foot--3 {
+    .foot__brand,
+    .foot__claim {
+        margin-bottom: 1rem;
+    }
+
+    .foot__main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid $border-color;
+    }
+}
+
+.foot--4 {
+    padding-top: 0;
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1.5rem;
+        padding-bottom: 5rem;
+    }
+
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+

@@ -1,0 +1,29 @@
+@mixin container($width: $container-width) {
+    width: 100%;
+    max-width: calc(#{$width} + #{$container-padding * 2});
+}
+
+
+@mixin subcontainer($size) {
+    max-width: (($container-width - ($grid-columns - 1) * $grid-gutter-width) / $grid-columns) * $size + ($size - 1) * $grid-gutter-width;
+}
+
+//@if (type-of($container-width) == "number" and index("px", unit($container-width)) != null) {
+@for $i from 1 through $grid-columns {
+    .container-#{$i} {
+        @include subcontainer($i);
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        @for $i from 1 through $grid-columns {
+            .container#{$infix}-#{$i} {
+                @include subcontainer($i);
+            }
+        }
+    }
+}
+//}

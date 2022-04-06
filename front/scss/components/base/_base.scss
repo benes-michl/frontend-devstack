@@ -1,0 +1,24 @@
+.external {
+    position: relative;
+    padding-right: 20px;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 11px;
+        height: 12px;
+        content: "";
+        background: url("./images/default/external.svg") no-repeat;
+        background-size: contain;
+        opacity: .75;
+    }
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.object-fit-container {
+    object-fit: contain;
+}

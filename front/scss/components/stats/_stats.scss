@@ -1,0 +1,24 @@
+.stats__number {
+    display: block;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: $primary;
+
+    @include mq($from: md) {
+        font-size: 3rem;
+    }
+
+    @include mq($from: lg) {
+        font-size: 3rem;
+    }
+
+    @include mq($from: xl) {
+        font-size: 4rem;
+    }
+}
+
+.stats__desc {
+    display: block;
+    margin: .5rem auto 0 auto;
+    font-size: $font-size-sm;
+}

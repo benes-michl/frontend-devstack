@@ -1,0 +1,40 @@
+.parsley-errors-list {
+    @include mq($from: sm) {
+        width: 65%;
+    }
+}
+.parsley-errors-list.filled,
+.errors-list
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 5px 0;
+    font-size: $font-size-sm;
+    font-weight: 400;
+    color: #fff;
+    list-style: none;
+    background-color: #c00;
+    border-radius: 4px;
+
+    &::before {
+        position: absolute;
+        top: -4px;
+        left: 10px;
+        width: 0;
+        height: 0;
+        content: "";
+        border-color: transparent transparent #c00 transparent;
+        border-style: solid;
+        border-width: 0 4px 4px 4px;
+    }
+}
+
+.errors-list {
+    background-color: #c00;
+
+    &::before {
+        border-color: transparent transparent #c00 transparent;
+    }
+}

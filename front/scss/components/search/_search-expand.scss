@@ -1,0 +1,37 @@
+.search-expand {
+    .form-inline {
+        display: block;
+    }
+
+    [type="text"],
+    [type="search"] {
+        float: right;
+        width: 0;
+        padding-right: 30px;
+        color: #fff;
+        cursor: pointer;
+        background-color: $primary;
+        background-image: url("data:image/svg+xml,<svg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path fill='white' fill-rule='evenodd' d='M12.442 12.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z' clip-rule='evenodd'/><path fill='white' fill-rule='evenodd' d='M8.5 14a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM15 8.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z' clip-rule='evenodd'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 42px 24px;
+        border-color: $primary;
+        transition: width .4s ease;
+
+        &:focus {
+            width: 240px;
+            cursor: text;
+            border-bottom: 1px solid $primary;
+            outline: none;
+        }
+
+        &::-ms-clear {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    button {
+        display: none;
+    }
+}

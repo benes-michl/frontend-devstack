@@ -1,0 +1,23 @@
+.navbar-brand {
+    padding: 0;
+
+    img {
+        display: block;
+    }
+}
+
+.navbar__search {
+    margin-left: auto;
+}
+
+.nav-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@include mq($from: md) {
+    .navbar-brand {
+        margin-right: $spacer * 2;
+    }
+}

@@ -1,0 +1,220 @@
+// stylelint-disable dollar-variable-default, length-zero-no-unit
+
+// Color system
+$black:                      #000;
+$dark:                       #4a4a4a;
+$white:                      #fff;
+$blue:                       #0065f2;
+$red:                        #ff3b30;
+
+$primary:                     #015bd7;
+$light:                       lighten($primary, 55%);
+
+$body-bg:                       $white;
+$body-color:                    $black;
+$head-color:                    $body-color;
+$foot-color:                    $body-color;
+
+$head-bg:                       $white;
+$foot-bg:                       $white;
+$nav-bg:                        $white;
+$nav-top-bg:                    $dark;
+
+$text-muted:                   $dark;
+
+$border-color:                 #ddd;
+$border-width:                 1px;
+
+$hr-border-color:              $border-color;
+$hr-border-width:              $border-width;
+$hr-margin-y:                  1rem;
+
+$box-bg:                     #ccc;
+$box-shadow-sm:                0 1px 3px rgba($black, .2);
+$box-shadow:                   0 1px 3px rgba($black, .2);
+$box-shadow-lg:                0 1px 3px rgba($black, .2);
+
+$theme-colors: (
+    "primary":                 $primary,
+    "white":                   $white
+);
+
+// Options
+$enable-rounded:               true;
+$border-radius:                4px;
+
+// Fonts
+$font-family-base:             arial, sans-serif;
+
+$font-size-base:               1rem;
+$font-size-lg:                 1.25rem;
+$font-size-sm:                 .875rem;
+
+$font-weight-base:             400;
+$font-weight-medium:           500;
+$font-weight-extrabold:        900;
+
+$line-height-base:             1.5;
+
+$headings-font-family:         inherit;
+$headings-font-weight:         700;
+$headings-color:              $black;
+
+$h1-font-size:                3rem;
+$h2-font-size:                2rem;
+$h3-font-size:                1.5rem;
+$h4-font-size:                1.25rem;
+$h5-font-size:                1.125rem;
+$h6-font-size:                $font-size-base !default;
+
+$lead-font-size:               1.125rem;
+$lead-font-weight:             400;
+$lead-width:                    600px;
+
+// TODO: doplnit responzivni velikosti
+$display1-size:               3rem;
+$display2-size:               2rem;
+$display3-size:               1.5rem;
+$display4-size:               1.25rem;
+
+$display1-weight:             400;
+$display2-weight:             400;
+$display3-weight:             400;
+$display4-weight:             400;
+
+$paragraph-margin-bottom:      1rem;
+
+// Links
+$link-color:                   $primary;
+$link-decoration:              underline;
+$link-hover-color:             darken($link-color, 15%);
+$link-hover-decoration:        none;
+
+// Sections
+$section-margin-y:             110px;
+$section-margin-y-sm:          75px;
+
+// Crumbs
+$breadcrumb-color:             $link-color;
+$breadcrumb-hover-color:       $link-hover-color;
+$breadcrumb-active-color:      $text-muted;
+$breadcrumb-bg:                transparent;
+$breadcrumb-spacer:            .5rem;
+$breadcrumb-font-size:         .8125rem;
+$breadcrumb-padding-y:         1.25rem;
+$breadcrumb-padding-x:         0;
+$breadcrumb-item-padding:      1rem;
+$breadcrumb-margin-bottom:     0;
+$breadcrumb-divider-color:     #ccc;
+$breadcrumb-divider:           quote("");
+
+
+// Buttons + Forms
+$custom-control-indicator-size: 1.25rem;
+$custom-checkbox-indicator-border-radius: .25rem;
+$custom-control-gutter:        1rem;
+
+$input-btn-padding-y:          .75rem;
+$input-btn-padding-x:          .75rem;
+$input-btn-padding-y-lg:       .6875rem;
+$input-btn-padding-x-lg:       1.875rem;
+$input-border-color:           $border-color;
+
+$btn-border-radius:            .25rem;
+$btn-padding-x:                2rem;
+$btn-padding-y:                .75rem;
+$btn-font-weight:               700;
+
+$label-margin-bottom:          .5rem;
+
+// Lists
+$list-padding:                 30px;
+
+// Tabs + Navc
+$nav-tabs-border-color:             $primary;
+$nav-tabs-border-width:             $border-width;
+$nav-tabs-border-radius:            $border-radius;
+$nav-tabs-link-hover-border-color:  $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-border-color;
+$nav-tabs-link-active-color:        $primary;
+$nav-tabs-link-active-bg:           $body-bg;
+$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg;
+
+$navbar-padding-y:             .625rem;
+$navbar-padding-x:             0;
+$navbar-nav-link-padding-x:    .75rem;
+$navbar-toggler-padding-x:     0;
+
+// Pagination
+$pagination-color:             $link-color;
+$pagination-padding-y:         .5rem;
+$pagination-padding-x:         .75rem;
+$pagination-padding-y-lg:      .5rem;
+$pagination-padding-x-lg:      .75rem;
+$pagination-spacing:           .25rem;
+$pagination-font-size:         1rem;
+$pagination-font-weight:       700;
+$pagination-disabled-bg:       $dark;
+$pagination-disabled-color:    $white;
+
+// Cards
+$card-spacer-x:                1.5rem;
+$card-border-color:            $primary;
+
+// Tables
+$table-cell-padding:           .75rem;
+$table-border-color:           $border-color;
+$table-dark-color:             $body-bg;
+
+// Badge
+$badge-padding-y:              .75em;
+$badge-padding-x:              1em;
+$badge-font-size:              80%;
+
+
+// Spacing
+$sizes: (
+    25: 25%,
+    33: 33.3%,
+    50: 50%,
+    66: 66.6%,
+    75: 75%,
+    100: 100%
+);
+
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: ($spacer * .5),
+    2: $spacer,
+    3: ($spacer * 1.5),
+    4: ($spacer * 2.5),
+    5: ($spacer * 3.75),
+    6: ($spacer * 5)
+);
+
+//$container-width:   1146px;
+$container-width:   90.375rem;
+$container-padding: 4.6875%;
+
+$grid-breakpoints: (
+    xs: 0px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1520px
+);
+
+$mq-breakpoints: (
+    sm:  576px,
+    md:  768px,
+    lg:  992px,
+    xl:  1200px,
+    xxl: 1520px
+);
+$mq-show-breakpoints: (sm,md,lg,xl,xxl);
+
+// RFS
+$rfs-breakpoint: 1880px;
+$rfs-factor: 30;
+$rfs-base-value: 1rem;

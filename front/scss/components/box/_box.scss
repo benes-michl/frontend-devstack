@@ -1,0 +1,22 @@
+.box {
+    position: relative;
+    padding: 1rem;
+    background-color: $box-bg;
+    @include border-radius($border-radius);
+
+    & > p:last-child {
+        margin-bottom: 0;
+    }
+
+    @include mq($from: sm) {
+        padding: 2rem;
+    }
+
+    @include mq($from: md) {
+        padding: 3rem;
+    }
+}
+
+.box-white {
+    background: $white;
+}

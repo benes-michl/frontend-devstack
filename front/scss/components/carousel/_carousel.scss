@@ -1,0 +1,22 @@
+.carousel {
+    margin-bottom: 3rem;
+
+    @include mq($from: md) {
+        margin-bottom: 5rem;
+    }
+}
+
+.carousel__item {
+    display: none;
+    width: 100%;
+    padding-right: 80px;
+    padding-left: 80px;
+
+    .flickity-enabled & {
+        display: block;
+    }
+
+    .flickity-resize & {
+        min-height: 100%;
+    }
+}

@@ -1,0 +1,16 @@
+.admin-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    padding: 12px;
+    background: $primary;
+
+    a {
+        color: $white;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
