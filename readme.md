@@ -1,6 +1,6 @@
 # Beneš & Michl Frontend devstack
 
-Frontend devstack is the basis of every Beneš & Michl web agency project. This repository is used for frontend developers.
+Frontend devstack is the basis of every Beneš & Michl web agency project. This repository is used for frontend developers. This devstack is a public repository. Your project based on this devstack must be private.
 
 ## Used technologies
 
