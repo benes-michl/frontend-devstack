@@ -63,14 +63,16 @@ We only support the latest stable browser versions.
 
 The ``package.json`` file contains some dependencies that you don't need. They are there for use in our content management system.
 
-
 ## Developing
 
 ### Start of development
 Run the command ``npm front:build:dev``.
 
-### Watch
-Command ``npm front:build:dev`` will automatically start tracking your .js and .scss files. When the file is changed, it will start compiling to the 'dist' folder.
+- File front/html/index.html is your markup to get started. Keep the content of the ``<head></head>`` tag. Keep the ``<script src="../dist/scripts.min.js"></script>`` code at the end of the file.
+- Command ``npm front:build:dev`` will automatically start tracking your .js and .scss files. When the file is changed, it will start compiling to the 'dist' folder. You will see the changes immediately in your browser, e.g. at the URL https://localhost/project/front/html/index.html.
+- front/html/index.html
+- Dependencies already include Bootstrap 5. Do not reuse them in HTMl pages.
+- If you need to add a new library, add it to the dependencies using the ``npm install <package-name>`` command.
 
 ### Live Reload
 Command ``npm front:build:dev`` automatically starts a 'live reload' on port 35729. There is javascript code at the end of the index.html file. If you do not want to use 'live reload', remove this code from index.html.
